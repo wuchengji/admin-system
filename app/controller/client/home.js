@@ -5,8 +5,8 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    let res = await this.app.mysql.query('select * from TABLES')
-    ctx.body = res;
+    console.log(ctx.service)
+    ctx.body = 'res';
   }
 }
 

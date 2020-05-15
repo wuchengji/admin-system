@@ -9,7 +9,7 @@ module.exports = app => {
     // log receive request
   });
   app.on('response', ctx => {
-    // ctx.starttime is set by framework
+    // ctx.starttime is se t by framework
     const used = Date.now() - ctx.starttime;
     // log total cost
   });

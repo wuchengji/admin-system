@@ -11,19 +11,26 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {
+    security: {
+      csrf : {
+        enable: false,
+        ignoreJSON: true
+      }
+    },
     mysql: {
-      // 单数据库信息配置
-      client: {
-        // host
-        host: 'localhost',
-        // 端口号
-        port: '3306',
-        // 用户名
-        user: 'root',
-        // 密码
-        password: '',
-        // 数据库名
-        database: 'information_schema',
+      clients: {
+        db1: {
+          // host
+          host: 'rm-bp1nrha8m4ch4x8w5co.mysql.rds.aliyuncs.com',
+          // 端口号
+          port: '3306',
+          // 用户名
+          user: 'wcj_admin',
+          // 密码
+          password: 'WUchengji7218508@@',
+          // 数据库名
+          database: 'blob_database',
+        }
       },
       // 是否加载到 app 上，默认开启
       app: true,
@@ -36,7 +43,16 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1587609198093_2540';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [
+    'params',
+    'jwt'
+  ];
+
+  config.jwt = {
+    ignore: [
+      '/admin/login'
+    ]
+  }
 
   // add your user config here
   const userConfig = {
