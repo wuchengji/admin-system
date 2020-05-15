@@ -36,6 +36,14 @@ module.exports = appInfo => {
       app: true,
       // 是否加载到 agent 上，默认关闭
       agent: false,
+    },
+    alinode: {
+      server: 'wss://47.114.37.239:8080',
+      appid: '84857',
+      secret: '3f962bec84342c1c1c4874f527ecb1ce70cb4d78',
+      logdir: '',
+      error_log: [],
+      agentidMode:''
     }
   };
 

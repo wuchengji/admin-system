@@ -9,5 +9,9 @@ module.exports = {
   mysql:{
     enable: true,
     package: 'egg-mysql'
+  },
+  alinode:{
+    enable: true,
+    package: 'egg-alinode'
   }
 };
